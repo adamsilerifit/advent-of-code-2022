@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+export {};
+
 type Crate = string;
 type Stack = Crate[];
 type Stacks = Stack[];
