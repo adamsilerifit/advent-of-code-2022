@@ -25,3 +25,10 @@ export const assertEqual = (a: any, b: any) => {
     throw new Error(`${a} does not equal ${b}`);
   }
 };
+
+export const getDistinctValues = <T>(allValues: T[], valuesAreEqual: (a: T, b: T) => boolean = (a, b) => a === b): T[] => {
+  return allValues
+    .filter((a, i) => {
+      return allValues.findIndex(b => valuesAreEqual(a, b)) === i;
+    });
+};
